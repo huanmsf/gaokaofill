@@ -1,0 +1,76 @@
+<!--result.wxml-->
+<view class="container">
+  <view class="user-info">
+    <view class="info-item">
+      <text class="label">省份：</text>
+      <text class="value">{{userInfo.province}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">科类：</text>
+      <text class="value">{{userInfo.type}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">总分：</text>
+      <text class="value">{{userInfo.score}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">排名：</text>
+      <text class="value">{{userInfo.rank}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">意向地区：</text>
+      <text class="value">{{userInfo.region.area}} - {{userInfo.region.city}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">意向专业：</text>
+      <text class="value">{{userInfo.major.category}} - {{userInfo.major.name}}</text>
+    </view>
+  </view>
+
+  <view class="filter-section">
+    <view class="filter-item">
+      <text class="filter-label">地区：</text>
+      <picker bindchange="bindRegionFilterChange" value="{{regionFilterIndex}}" range="{{regions}}">
+        <view class="filter-picker">
+          {{regions[regionFilterIndex] || '全部地区'}}
+        </view>
+      </picker>
+    </view>
+    <view class="filter-item">
+      <text class="filter-label">专业：</text>
+      <picker bindchange="bindMajorFilterChange" value="{{majorFilterIndex}}" range="{{majors}}">
+        <view class="filter-picker">
+          {{majors[majorFilterIndex] || '全部专业'}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="recommend-section">
+    <view class="section-title">推荐院校</view>
+    <view class="school-list">
+      <view class="school-item" wx:for="{{filteredRecommendations}}" wx:key="index">
+        <view class="school-name">{{item.name}}</view>
+        <view class="school-info">
+          <text class="info-text">去年最低分：{{item.minScore}}</text>
+          <text class="info-text">去年最低排名：{{item.minRank}}</text>
+          <text class="info-text">地区：{{item.region}}</text>
+        </view>
+        <view class="school-tags">
+          <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+        </view>
+        <view class="major-list">
+          <view class="major-item" wx:for="{{item.majors}}" wx:key="index">
+            <text class="major-name">{{item.name}}</text>
+            <text class="major-score">去年最低分：{{item.minScore}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-buttons">
+    <button class="back-btn" bindtap="goBack">返回修改</button>
+    <button class="share-btn" open-type="share">分享结果</button>
+  </view>
+</view> 

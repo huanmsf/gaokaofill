@@ -1,0 +1,40 @@
+<!--school.wxml-->
+<view class="page">
+  <navigation-bar title="院校列表" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+  
+  <view class="filter-section">
+    <view class="filter-item">
+      <picker mode="selector" range="{{provinces}}" bindchange="onProvinceChange">
+        <view class="picker">
+          <text>{{selectedProvince || '选择省份'}}</text>
+          <text class="icon">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="filter-item">
+      <picker mode="selector" range="{{schoolTypes}}" bindchange="onTypeChange">
+        <view class="picker">
+          <text>{{selectedType || '院校类型'}}</text>
+          <text class="icon">▼</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="school-list">
+    <view class="school-item" wx:for="{{schools}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+      <view class="school-info">
+        <view class="school-name">{{item.name}}</view>
+        <view class="school-tags">
+          <text class="tag" wx:if="{{item.is985}}">985</text>
+          <text class="tag" wx:if="{{item.is211}}">211</text>
+          <text class="tag">{{item.type}}</text>
+        </view>
+      </view>
+      <view class="school-rank">
+        <text>全国排名：{{item.rank}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view> 

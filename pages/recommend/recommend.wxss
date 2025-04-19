@@ -1,0 +1,98 @@
+.page {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.container {
+  padding: 30rpx;
+}
+
+.header {
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.item {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.school-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.school-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.school-type {
+  font-size: 24rpx;
+  color: #4096ff;
+  background: #e6f7ff;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+}
+
+.majors {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.major-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+}
+
+.major-name {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+.major-score {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.score-label {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.score-value {
+  font-size: 28rpx;
+  color: #4096ff;
+  font-weight: bold;
+} 

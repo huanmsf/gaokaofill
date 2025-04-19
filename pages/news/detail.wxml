@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="container">
+    <view class="article">
+      <view class="article-header">
+        <view class="article-title">{{article.title}}</view>
+        <view class="article-meta">
+          <text class="article-time">{{article.time}}</text>
+          <text class="article-source">{{article.source}}</text>
+        </view>
+      </view>
+
+      <view class="article-content">
+        <view class="article-text" wx:for="{{article.content}}" wx:key="index">
+          <text wx:if="{{item.type === 'text'}}">{{item.text}}</text>
+          <image wx:if="{{item.type === 'image'}}" src="{{item.url}}" mode="widthFix" class="article-image"></image>
+          <video wx:if="{{item.type === 'video'}}" src="{{item.url}}" controls class="article-video"></video>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,32 @@
+<!--input.wxml-->
+<view class="container">
+  <view class="form-item">
+    <text class="label">省份</text>
+    <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{provinces}}">
+      <view class="picker">
+        {{provinces[provinceIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <text class="label">文理科</text>
+    <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{types}}">
+      <view class="picker">
+        {{types[typeIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-item">
+    <text class="label">总分</text>
+    <input type="digit" placeholder="请输入高考总分" bindinput="bindScoreInput" value="{{score}}"/>
+  </view>
+
+  <view class="form-item">
+    <text class="label">排名</text>
+    <input type="number" placeholder="请输入全省排名" bindinput="bindRankInput" value="{{rank}}"/>
+  </view>
+
+  <button class="submit-btn" bindtap="submitInfo">提交信息</button>
+</view> 

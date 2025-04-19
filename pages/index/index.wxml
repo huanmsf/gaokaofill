@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="page">
+  <navigation-bar title="高考志愿助手" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+  <scroll-view scroll-y class="scroll-container">
+    <view class="container">
+      <view class="card" bindtap="navigateToSubject">
+        <view class="card-title">
+          <text>设置选科分数</text>
+          <text class="icon">✎</text>
+        </view>
+        <view class="risk-section">
+          <view class="risk-item" bindtap="navigateToRecommend" data-type="high">
+            <text class="risk-count">{{riskData.high}}</text>
+            <text class="risk-label risk-high">可冲刺</text>
+          </view>
+          <view class="risk-item" bindtap="navigateToRecommend" data-type="medium">
+            <text class="risk-count">{{riskData.medium}}</text>
+            <text class="risk-label risk-medium">较稳妥</text>
+          </view>
+          <view class="risk-item" bindtap="navigateToRecommend" data-type="low">
+            <text class="risk-count">{{riskData.low}}</text>
+            <text class="risk-label risk-low">可保底</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="grid">
+        <navigator class="grid-item" url="/pages/school/school">
+          <text class="icon">📊</text>
+          <text>院校排名</text>
+        </navigator>
+        <navigator class="grid-item" url="/pages/major/major">
+          <text class="icon">🎯</text>
+          <text>专业推荐</text>
+        </navigator>
+        <navigator class="grid-item" url="/pages/service/service">
+          <text class="icon">💬</text>
+          <text>专家答疑</text>
+        </navigator>
+        <navigator class="grid-item" url="/pages/service/service">
+          <text class="icon">🤖</text>
+          <text>智能助手</text>
+        </navigator>
+      </view>
+
+      <view class="section">
+        <view class="section-header">
+          <text class="section-title">高考资讯</text>
+        </view>
+        <view class="news-list">
+          <view class="news-item" wx:for="{{newsList}}" wx:key="id" bindtap="navigateToNewsDetail" data-id="{{item.id}}">
+            <view class="news-title">{{item.title}}</view>
+            <view class="news-time">{{item.time}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="customer-service" bindtap="showCustomerService">
+    <text class="icon">💬</text>
+  </view>
+</view>

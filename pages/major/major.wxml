@@ -1,0 +1,39 @@
+<!--major.wxml-->
+<view class="page">
+  <navigation-bar title="专业推荐" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+  
+  <view class="filter-section">
+    <view class="filter-item">
+      <picker mode="selector" range="{{categories}}" bindchange="onCategoryChange">
+        <view class="picker">
+          <text>{{selectedCategory || '专业类别'}}</text>
+          <text class="icon">▼</text>
+        </view>
+      </picker>
+    </view>
+    
+    <view class="filter-item">
+      <picker mode="selector" range="{{levels}}" bindchange="onLevelChange">
+        <view class="picker">
+          <text>{{selectedLevel || '学历层次'}}</text>
+          <text class="icon">▼</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="major-list">
+    <view class="major-item" wx:for="{{majors}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+      <view class="major-info">
+        <view class="major-name">{{item.name}}</view>
+        <view class="major-tags">
+          <text class="tag">{{item.category}}</text>
+          <text class="tag">{{item.level}}</text>
+        </view>
+      </view>
+      <view class="major-desc">
+        <text>{{item.description}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view> 
