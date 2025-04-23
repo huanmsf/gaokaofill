@@ -1,5 +1,5 @@
 .page {
-  min-height: 100vh;
+  height: 100vh;
   background: #f5f5f5;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .major-list {
-  height: calc(100vh - 88rpx - 100rpx);
+  height: calc(100vh - 88rpx - 250rpx);
 }
 
 .major-item {

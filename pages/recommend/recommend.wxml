@@ -1,4 +1,6 @@
 <view class="page">
+  <navigation-bar title="院校推荐" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+
   <view class="container">
     <view class="header">
       <view class="title">{{title}}</view>

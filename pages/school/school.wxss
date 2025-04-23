@@ -32,7 +32,7 @@
 }
 
 .school-list {
-  height: calc(100vh - 88rpx - 100rpx);
+  height: calc(100vh - 88rpx - 220rpx);
 }
 
 .school-item {

@@ -12,6 +12,10 @@
   color: var(--weui-FG-0);
   flex: none;
 }
+.weui-navigation-bar__left {
+  display: flex;
+  align-items: center !important;
+}
 
 .weui-navigation-bar__inner {
   position: relative;

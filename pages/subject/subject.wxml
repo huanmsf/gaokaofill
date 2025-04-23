@@ -1,11 +1,12 @@
 <!--subject.wxml-->
 <view class="page">
+  <navigation-bar title="选科设置" back="{{true}}" color="black" background="#FFF"></navigation-bar>
   <view class="container">
     <view class="card">
-      <view class="card-title">
+      <!-- <view class="card-title">
         <text>选科设置</text>
         <text class="icon">✎</text>
-      </view>
+      </view> -->
       
       <view class="form-group">
         <view class="form-item">

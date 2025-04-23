@@ -1,12 +1,10 @@
 .page {
   min-height: 100vh;
   background: #f5f5f5;
-  padding-top: 30rpx;
 }
 
 .container {
   padding: 30rpx;
-  height: calc(100vh - 30rpx);
   display: flex;
   flex-direction: column;
 }

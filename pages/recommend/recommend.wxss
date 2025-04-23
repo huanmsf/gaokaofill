@@ -1,14 +1,19 @@
 .page {
-  min-height: 100vh;
+  height: 100vh;
   background: #f5f5f5;
+  display:flex;
+  flex-direction:column;
+  box-sizing: border-box;
 }
 
 .container {
   padding: 30rpx;
-}
-
-.header {
-  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  flex:1;
+  height:0;
+  display:flex;
+  flex-direction:column;
+  gap:30rpx;
 }
 
 .title {
@@ -21,12 +26,17 @@
 .subtitle {
   font-size: 24rpx;
   color: #999999;
+  text-align: center;
 }
 
 .list {
   display: flex;
   flex-direction: column;
   gap: 20rpx;
+  width:100%;
+  flex:1;
+  height:0;
+  overflow-y: auto;
 }
 
 .item {
