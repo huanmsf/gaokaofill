@@ -30,9 +30,6 @@
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
-  gap: 20rpx;
   width:100%;
   flex:1;
   height:0;
@@ -46,6 +43,7 @@
   border-radius: 16rpx;
   padding: 30rpx;
   box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+  margin-bottom:20rpx;
 }
 
 .school-info {
