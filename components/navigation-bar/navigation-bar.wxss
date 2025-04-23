@@ -98,3 +98,6 @@
     transform: rotate(360deg);
   }
 }
+.weui-navigation-bar__right{
+  height:100%;
+}

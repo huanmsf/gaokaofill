@@ -13,6 +13,7 @@
   background: #ffffff;
   border-radius: 16rpx;
   padding: 40rpx;
+  width:100%;
   box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
   flex: 1;
   display: flex;

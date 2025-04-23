@@ -40,6 +40,8 @@
 }
 
 .item {
+  flex-shrink: 0;
+  height:auto;
   background: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -88,6 +90,7 @@
   font-size: 28rpx;
   color: #333333;
   font-weight: 500;
+  flex:1;
 }
 
 .major-score {
@@ -99,10 +102,13 @@
 .score-label {
   font-size: 24rpx;
   color: #999999;
+  white-space: nowrap;
+overflow: hidden;
 }
 
 .score-value {
   font-size: 28rpx;
   color: #4096ff;
   font-weight: bold;
+  white-space: nowrap;
 } 

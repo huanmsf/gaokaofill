@@ -3,10 +3,10 @@
   <navigation-bar title="高考志愿助手" back="{{false}}" color="black" background="#FFF"></navigation-bar>
   <scroll-view scroll-y class="scroll-container">
     <view class="container">
-      <view class="card" bindtap="navigateToSubject">
+      <view class="card" >
         <view class="card-title">
           <text>设置选科分数</text>
-          <text class="icon">✎</text>
+          <text class="icon" bindtap="navigateToSubject">✎</text>
         </view>
         <view class="risk-section">
           <view class="risk-item" bindtap="navigateToRecommend" data-type="high">
