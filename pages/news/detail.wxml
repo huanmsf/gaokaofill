@@ -1,4 +1,5 @@
 <view class="page">
+  <navigation-bar title="详情" back="{{true}}" color="black" background="#FFF"></navigation-bar>
   <view class="container">
     <view class="article">
       <view class="article-header">
