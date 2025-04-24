@@ -48,7 +48,7 @@
           <text class="section-title">高考资讯</text>
         </view>
         <view class="news-list">
-          <view class="news-item" wx:for="{{newsList}}" wx:key="id" bindtap="navigateToNewsDetail" data-id="{{item.id}}">
+          <view class="news-item" wx:for="{{newsList}}" wx:key="id" bindtap="showCustomerService" data-id="{{item.id}}">
             <view class="news-title">{{item.title}}</view>
             <view class="news-time">{{item.time}}</view>
           </view>

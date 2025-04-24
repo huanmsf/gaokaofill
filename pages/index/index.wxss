@@ -1,6 +1,6 @@
 /**index.wxss**/
 .page {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(180deg, #4096ff 0%, #4096ff 20%, #ffffff 20%, #ffffff 100%);
   position: relative;
 }

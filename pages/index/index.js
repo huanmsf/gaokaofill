@@ -59,6 +59,7 @@ Page({
 
   // 跳转到新闻详情页
   navigateToNewsDetail(e) {
+    console.log(11111111)
     const id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: `/pages/news/detail?id=${id}`
