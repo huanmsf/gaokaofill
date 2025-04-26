@@ -1,15 +1,20 @@
+import AIService from '../../services/ai'
+
 Page({
   data: {
     inputValue: '',
     messages: [],
     scrollToView: 'welcome',
-    messageId: 0
+    messageId: 0,
+    isLoading: false
   },
 
   onLoad: function() {
     wx.setNavigationBarTitle({
-      title: '在线客服'
+      title: '智能助手'
     })
+    // 添加欢迎消息
+    this.addMessage('service', '你好！我是高考志愿助手，有什么可以帮助你的吗？')
   },
 
   onInput(e) {
@@ -19,8 +24,8 @@ Page({
   },
 
   // 发送消息
-  sendMessage() {
-    if (!this.data.inputValue.trim()) return
+  async sendMessage() {
+    if (!this.data.inputValue.trim() || this.data.isLoading) return
 
     const userMessage = {
       id: ++this.data.messageId,
@@ -32,34 +37,59 @@ Page({
     this.setData({
       messages: [...this.data.messages, userMessage],
       inputValue: '',
-      scrollToView: `msg-${userMessage.id}`
+      scrollToView: `msg-${userMessage.id}`,
+      isLoading: true
     })
 
-    // 模拟AI回复
-    setTimeout(() => {
+    try {
+      // 显示加载提示
+      wx.showLoading({
+        title: '思考中...',
+        mask: true
+      })
+
+      // 发送消息到AI
+      const response = await AIService.sendMessage(userMessage.content)
+
+      // 添加AI回复
       const aiMessage = {
         id: ++this.data.messageId,
         type: 'service',
-        content: this.getAIResponse(userMessage.content)
+        content: response
       }
 
       this.setData({
         messages: [...this.data.messages, aiMessage],
-        scrollToView: `msg-${aiMessage.id}`
+        scrollToView: `msg-${aiMessage.id}`,
+        isLoading: false
       })
-    }, 500)
+    } catch (error) {
+      console.error('发送消息失败:', error)
+      wx.showToast({
+        title: '发送消息失败，请稍后重试',
+        icon: 'none'
+      })
+    } finally {
+      wx.hideLoading()
+      this.setData({ isLoading: false })
+    }
   },
 
-  // 模拟AI回复逻辑
-  getAIResponse(userMessage) {
-    // 这里可以根据用户消息返回相应的回复
-    // 后续可以接入真实的AI接口
-    const responses = [
-      '根据你的问题，我建议你可以...',
-      '这个问题比较复杂，让我为你详细分析一下...',
-      '关于这个问题，主要有以下几个方面需要考虑...',
-      '我理解你的困惑，建议你可以从以下几个角度思考...'
-    ]
-    return responses[Math.floor(Math.random() * responses.length)]
+  // 添加消息
+  addMessage(type, content) {
+    const message = {
+      id: ++this.data.messageId,
+      type,
+      content
+    }
+    this.setData({
+      messages: [...this.data.messages, message],
+      scrollToView: `msg-${message.id}`
+    })
+  },
+
+  onUnload() {
+    // 清空对话历史
+    AIService.clearHistory()
   }
 }) 
