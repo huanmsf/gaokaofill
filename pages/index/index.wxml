@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="page">
   <navigation-bar title="高考志愿助手" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-  <scroll-view scroll-y class="scroll-container">
+  <view class="scroll-container">
     <view class="container">
       <view class="card" >
         <view class="card-title">
@@ -48,14 +48,14 @@
           <text class="section-title">高考资讯</text>
         </view>
         <view class="news-list">
-          <view class="news-item" wx:for="{{newsList}}" wx:key="id" bindtap="showCustomerService" data-id="{{item.id}}">
+          <view class="news-item" wx:for="{{newsList}}" wx:key="id" bindtap="navigateToNewsDetail" data-id="{{item.id}}">
             <view class="news-title">{{item.title}}</view>
             <view class="news-time">{{item.time}}</view>
           </view>
         </view>
       </view>
     </view>
-  </scroll-view>
+  </view>
 
   <view class="customer-service" bindtap="showCustomerService">
     <text class="icon">💬</text>

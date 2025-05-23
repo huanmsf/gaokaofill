@@ -5,9 +5,12 @@
 
 .container {
   padding: 30rpx;
+  word-wrap:break-word;
 }
 
 .article {
+  width:100%;
+  box-sizing: border-box;
   background: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
