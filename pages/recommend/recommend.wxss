@@ -9,11 +9,10 @@
 .container {
   padding: 30rpx;
   box-sizing: border-box;
-  flex:1;
-  height:0;
-  display:flex;
-  flex-direction:column;
+  height: calc(100vh - 88rpx - 60rpx); /* 视口高度 - 导航栏高度 - 底部客服按钮高度 */
+  overflow-y: auto;
   gap:30rpx;
+  display:block;
 }
 
 .title {
@@ -21,24 +20,23 @@
   font-weight: bold;
   color: #333333;
   margin-bottom: 10rpx;
+  text-align: center;
 }
 
 .subtitle {
   font-size: 24rpx;
   color: #999999;
   text-align: center;
+  margin-bottom:20rpx;
 }
 
 .list {
   width:100%;
-  flex:1;
-  height:0;
-  overflow-y: auto;
+ height:auto;
+  box-sizing: border-box;
 }
 
 .item {
-  flex-shrink: 0;
-  height:auto;
   background: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -70,7 +68,7 @@
 }
 
 .majors {
-  display: flex;
+  display: block;
   flex-direction: column;
   gap: 16rpx;
 }
