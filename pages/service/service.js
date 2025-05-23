@@ -1,4 +1,4 @@
-import AIService from '../../services/ai'
+import AIService from '../../services/ai.js'
 
 Page({
   data: {
@@ -14,7 +14,8 @@ Page({
       title: '智能助手'
     })
     // 添加欢迎消息
-    this.addMessage('service', '你好！我是高考志愿助手，有什么可以帮助你的吗？')
+    // this.addMessage('service', '你好！我是高考志愿助手，有什么可以帮助你的吗？')
+    this.sendMessage('你是一个AI，请回复我是AI')
   },
 
   onInput(e) {
@@ -24,8 +25,8 @@ Page({
   },
 
   // 发送消息
-  async sendMessage() {
-    if (!this.data.inputValue.trim() || this.data.isLoading) return
+  async sendMessage(content) {
+    if (typeof content !== 'string' && (!this.data.inputValue.trim() || this.data.isLoading)) return
 
     const userMessage = {
       id: ++this.data.messageId,
@@ -49,7 +50,7 @@ Page({
       })
 
       // 发送消息到AI
-      const response = await AIService.sendMessage(userMessage.content)
+      const response = await AIService.sendMessage(typeof content === 'string' ? content :userMessage.content)
 
       // 添加AI回复
       const aiMessage = {

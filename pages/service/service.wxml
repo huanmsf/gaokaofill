@@ -3,12 +3,12 @@
   <view class="container">
     <scroll-view class="chat-container" scroll-y scroll-into-view="{{scrollToView}}">
       <view class="message-list">
-        <view class="message service" id="welcome">
+        <!-- <view class="message service" id="welcome">
           <image class="avatar" src="/images/ai-avatar.png"></image>
           <view class="content">
             <text>你好！我是你的AI学业规划助手，很高兴为你服务。我可以帮你：\n1. 解答高考志愿填报相关问题\n2. 提供院校和专业咨询\n3. 分析录取概率\n4. 推荐适合的院校和专业</text>
           </view>
-        </view>
+        </view> -->
         <block wx:for="{{messages}}" wx:key="id">
           <view class="message {{item.type}}" id="msg-{{item.id}}">
             <image wx:if="{{item.type === 'service'}}" class="avatar" src="/images/ai-avatar.png"></image>
